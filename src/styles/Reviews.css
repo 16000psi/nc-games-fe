@@ -170,5 +170,17 @@
 }
 
 
+.expand-indicator-container{
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.expand-indicator{
+    border: none;
+}
+
+
 
     

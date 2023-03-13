@@ -1,6 +1,8 @@
+
 const Home = () => {
-    return (
+    return (<>
         <h1>NC Home</h1>
+        </>
     )
 }
 

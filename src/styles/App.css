@@ -7,6 +7,25 @@
     
 }
 
+a{
+    color: inherit;
+    text-decoration: inherit;
+    background-color: inherit;
+}
+
+button{
+    background-color: inherit;
+    color: inherit;
+    border: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.submit-button > *:hover{
+    text-decoration: underline;
+
+}
+
 
 .App {
     min-height: 100vh;

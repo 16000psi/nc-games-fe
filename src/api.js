@@ -6,10 +6,5 @@ const api = axios.create({
 
 export const getAllReviews = () => {
     return api.get("/reviews")
-    .then((response) => {
-        return response
-    }).catch((error) => {
-        console.log(error, "<<<< error")
-        return error
-    })
+
 }

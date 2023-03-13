@@ -7,9 +7,10 @@ import userSVG from "./../images/user.svg"
 import pencilSVG from "./../images/pencil.svg"
 import arrowUpSVG from "./../images/upArrow.svg"
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 
-export const Navbar = ({setEndpoint}) => {
+export const Navbar = () => {
 
     
     const [newEndpoint, setNewEndpoint] = useState("/")
@@ -40,7 +41,6 @@ export const Navbar = ({setEndpoint}) => {
 
 
     function submit () {
-        setEndpoint(newEndpoint)
         setDropDownOpen(false)
         setActiveSearchButton(null)
     }
@@ -98,15 +98,7 @@ export const Navbar = ({setEndpoint}) => {
                     <img className="nav-icon" src={speachBubbleSVG} alt="comments" />
                 </div>
             </button>
-{/* 
-            <button className="navbar-button" onClick={submit}>
-                <div className="nav-button-flex-container">
-                    <p className="navbar-label">
-                        Submit
-                    </p>
-                    <img className="nav-icon" src={arrowRightSVG} alt="submit" />
-                </div>
-            </button> */}
+
 
 
 
@@ -131,16 +123,18 @@ export const Navbar = ({setEndpoint}) => {
             <button>Example</button>
 
 
+    
 
 
-            <button  onClick={submit}>
+            <Link to={newEndpoint} className="submit-button" >
                 <div className="nav-button-flex-container">
-                    <p className="navbar-label">
+                    <button onClick={submit} className="navbar-label">
                     Search for all reviews
-                    </p>
+                    </button>
                     <img className="nav-submit-icon" src={arrowRightSVG} alt="submit" />
                 </div>
-            </button> 
+            
+            </Link>
 
 
             

@@ -1,9 +1,10 @@
 import './../styles/Header-Navbar-Footer.css';
+import { Link } from 'react-router-dom';
 
 const Header = ({setEndpoint}) => {
     return (
         <section className='header'>
-            <h1 onClick={() => setEndpoint("/")}>NC GAMES</h1>
+            <Link to="/" ><h1>NC GAMES</h1></Link>
         </section>
     )
 }
