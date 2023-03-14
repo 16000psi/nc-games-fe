@@ -8,6 +8,7 @@ import Votes from './Votes';
 import Comments from './Comments';
 import PostComment from './PostComment';
 import Comment from "./Comment"
+import IndividualReview from './IndividualReview';
 
-export {Header, Navbar, Footer, Home, Reviews, Review, Votes, Comments, PostComment, Comment}
+export {Header, Navbar, Footer, Home, Reviews, Review, Votes, Comments, PostComment, Comment, IndividualReview}
 

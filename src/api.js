@@ -8,3 +8,7 @@ export const getAllReviews = () => {
     return api.get("/reviews")
 
 }
+
+export const getSingleReview = (review_id) => {
+    return api.get(`/reviews/${review_id}`)
+}
