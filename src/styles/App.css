@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Nunito Sans', sans-serif;
+    
+    
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+    background-color: inherit;
+}
+
+button{
+    background-color: inherit;
+    color: inherit;
+    border: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.submit-button > *:hover{
+    text-decoration: underline;
+
+}
+
+
+.App {
+    min-height: 100vh;
+    max-width: 80%;
+    min-width: 80%;
+    position: relative;
+
+
+    
+    
+}
+
+.gradient-overlay{
+
+
+    background-image: linear-gradient(to bottom, #ffffff00, #ffffff00, #04ff3a2d , #147328c7  );
+    display: flex;
+    justify-content: center;
+
+  
+}
+
+
+body{
+    background-image: linear-gradient(to left, #1e021f, #370934 );
+}
+
+.results-display-container{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.results-display{
+    padding-top: 30px;;
+    padding-bottom: 240px;
+    width: 90%;
+ 
+}
+
+.loading-message{
+    color: white;
+}
+  

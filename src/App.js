@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Header, Navbar, Footer, Home, Reviews } from './components/index';
+import {Route, Routes} from "react-router-dom"
+
+import './styles/App.css';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='gradient-overlay'>
+      <div className="App">
+        <section className='header-navbar'>
+          <Header />
+          <Navbar />
+        </section>
+        <section className='results-display-container'>
+          <section className='results-display'>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/reviews" element={<Reviews />}/>
+            </Routes>
+          </section>
+        </section>
+        <Footer />
+      </div>
     </div>
   );
 }
