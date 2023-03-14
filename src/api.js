@@ -8,3 +8,13 @@ export const getAllReviews = () => {
     return api.get("/reviews")
 
 }
+
+
+
+export const incrementVotes = (parent_id, increment) => {
+
+    return api.patch(`/reviews/${parent_id}`, {
+        inc_votes: increment,
+    })
+
+}
