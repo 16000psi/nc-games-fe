@@ -1,4 +1,4 @@
-import { Header, Navbar, Footer, Home, Reviews } from './components/index';
+import { Header, Navbar, Footer, Home, Reviews, IndividualReview } from './components/index';
 import {Route, Routes} from "react-router-dom"
 
 import './styles/App.css';
@@ -17,6 +17,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/reviews" element={<Reviews />}/>
+              <Route path="/reviews/:review_id" element={<IndividualReview />}/>
             </Routes>
           </section>
         </section>

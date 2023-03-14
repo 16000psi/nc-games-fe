@@ -2,6 +2,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Votes, Comments } from "./index"
 import { howLongAgo, howLongAgoShort } from "../Utils/how-long-ago"
+import { Link } from "react-router-dom"
 
 
 
@@ -147,6 +148,9 @@ const Review = ({ reviewObject }) => {
 
 
             <div className="review-button-container" onClick={toggleCommentsOpen}><button>{reviewObject.comment_count} comments</button></div>
+
+            <Link to={`/reviews/${reviewObject.review_id}`} className="review-button-container" >
+              <button>View review page</button></Link>
           </div>
 
 
