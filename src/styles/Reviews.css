@@ -161,9 +161,6 @@
     /* width: 25vw; */
     cursor: pointer;
 
-
-
-
     color: white;
 
 
@@ -179,6 +176,20 @@
 
 .expand-indicator{
     border: none;
+}
+
+
+.review-votes{
+    display: flex;
+    justify-content: left;
+
+}
+
+.vote-innertext{
+    font-size:1rem;
+    border: 2px solid rgba(255, 255, 255, 0.357);
+
+    
 }
 
 .individual-review-container{
@@ -249,7 +260,6 @@
     margin-right: 30px;
     padding-bottom: 20px;
 }
-
 
 
 

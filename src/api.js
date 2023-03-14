@@ -15,6 +15,16 @@ export const getAllReviews = () => {
 
 }
 
+
+
+export const incrementVotes = (parent_id, increment) => {
+
+    return api.patch(`/reviews/${parent_id}`, {
+        inc_votes: increment,
+    })
+
+
 export const getSingleReview = (review_id) => {
     return api.get(`/reviews/${review_id}`)
+
 }

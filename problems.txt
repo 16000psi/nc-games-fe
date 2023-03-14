@@ -1,0 +1,1 @@
+When expanding / collapsing review cards, temporary vote increment is reset - maybe need to pass vote up to review? Take a look at this
