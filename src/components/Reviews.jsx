@@ -1,10 +1,11 @@
 import {Review} from "./index"
-
+import { useEffect, useState } from "react";
 import { getAllReviews } from "../api";
+import { useParams} from "react-router-dom"
 
 
 import './../styles/Reviews.css';
-import { useEffect, useState } from "react";
+
 
 
   
@@ -12,10 +13,11 @@ const Reviews = () => {
 
   const [reviewsData, setReviewsData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const {category_slug} = useParams()
 
   useEffect(() => {
     setIsLoading(true)
-    getAllReviews().then(({data}) => {
+    getAllReviews(category_slug).then(({data}) => {
       const {reviews} = data
       setIsLoading(false)
       setReviewsData(reviews);
