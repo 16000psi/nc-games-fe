@@ -1,4 +1,6 @@
-import { Header, Navbar, Footer, Home, Reviews, IndividualReview, Users} from './components/index';
+
+import { Header, Navbar, Footer, Home, Reviews, IndividualReview, Users, Categories} from './components/index';
+
 import {Route, Routes} from "react-router-dom"
 
 import './styles/App.css';
@@ -18,6 +20,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/reviews" element={<Reviews />}/>
               <Route path="/reviews/:review_id" element={<IndividualReview />}/>
+              <Route path="/reviews/category/:category_slug" element={<Reviews />}/>
+              <Route path="/categories" element={<Categories />}/>
               <Route path="/users" element={<Users />} />
             </Routes>
           </section>

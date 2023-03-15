@@ -9,7 +9,8 @@ import Comments from './Comments';
 import PostComment from './PostComment';
 import Comment from "./Comment"
 import IndividualReview from './IndividualReview';
+import Categories from './Categories';
 import Users from './Users';
 
-export {Header, Navbar, Footer, Home, Reviews, Review, Votes, Comments, PostComment, Comment, IndividualReview, Users}
+export {Header, Navbar, Footer, Home, Reviews, Review, Votes, Comments, PostComment, Comment, IndividualReview, Categories, Users}
 

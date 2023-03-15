@@ -89,13 +89,13 @@ export const Navbar = () => {
 
             <button className="navbar-button" 
                 
-                onClick={() => mainNavOnClick("comments")}
-                style={(activeSearchButton === "comments") ? activeButton : inactiveButton}>
+                onClick={() => mainNavOnClick("categories")}
+                style={(activeSearchButton === "categories") ? activeButton : inactiveButton}>
                 <div className="nav-button-flex-container">
                     <p className="navbar-label">
-                        Comments
+                        categories
                     </p>
-                    <img className="nav-icon" src={speachBubbleSVG} alt="comments" />
+                    <img className="nav-icon" src={speachBubbleSVG} alt="categories" />
                 </div>
             </button>
 

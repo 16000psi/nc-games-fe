@@ -10,8 +10,12 @@ export const getCommentsByReview = (review_id) => {
 
 }
 
-export const getAllReviews = () => {
-    return api.get("/reviews")
+export const getAllReviews = (category_slug) => {
+    return api.get("/reviews", {
+        params: {
+            category: category_slug
+        }
+    })
 
 }
 
@@ -21,7 +25,12 @@ export const incrementVotes = (parent_id, increment) => {
 
     return api.patch(`/reviews/${parent_id}`, {
         inc_votes: increment,
+
+})
+
+
     })
+
 }
 
 
@@ -31,6 +40,11 @@ export const getSingleReview = (review_id) => {
 }
 
 
+
+export const getAllCategories = () => {
+    return api.get('/categories')
+}
+
 export const getAllUsers = () => {
     return api.get("/users")
   
@@ -39,3 +53,4 @@ export const getAllUsers = () => {
 export const addComment = (review_id, newComment) => {
     return api.post(`/reviews/${review_id}/comments`, newComment)
 };
+
