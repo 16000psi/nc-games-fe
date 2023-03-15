@@ -1,7 +1,7 @@
 import {Review} from "./index"
 import { useEffect, useState } from "react";
 import { getAllReviews } from "../api";
-import { useParams} from "react-router-dom"
+import { useParams, useSearchParams} from "react-router-dom"
 
 
 import './../styles/Reviews.css';
@@ -13,17 +13,21 @@ const Reviews = () => {
 
   const [reviewsData, setReviewsData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [searchParams] = useSearchParams();
   const {category_slug} = useParams()
+  const sort_by = searchParams.get("sort_by")
+  const order = searchParams.get("order")
+
 
   useEffect(() => {
     setIsLoading(true)
-    getAllReviews(category_slug).then(({data}) => {
+    getAllReviews(category_slug, sort_by, order).then(({data}) => {
       const {reviews} = data
       setReviewsData(reviews);
       setIsLoading(false)
     }).catch((error) =>
     console.log(error));
-  }, []);
+  }, [sort_by, category_slug, order]);
    
 
 
