@@ -4,7 +4,7 @@ import { UserContext } from '../context/UserContext';
 
 
 
-const PostComment = ({review_id, commentPosted, setCommentPosted}) => {
+const PostComment = ({review_id, hasCommentPosted, setHasCommentPosted}) => {
 
     const { user } = useContext(UserContext);
 
@@ -41,7 +41,7 @@ const PostComment = ({review_id, commentPosted, setCommentPosted}) => {
         
         addComment(review_id, {username: user.username, body: commentContent})
         .then(() => {
-            setCommentPosted(true)
+            setHasCommentPosted(true)
             setOptimisticPost(false)
         })
         .catch(() => {

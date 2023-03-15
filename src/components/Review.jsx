@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Votes, Comments } from "./index"
 import { howLongAgo, howLongAgoShort } from "../Utils/how-long-ago"
@@ -11,6 +11,21 @@ const Review = ({ reviewObject }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [imageIsDisplayed, setImageIsDisplayed] = useState(false)
   const [areCommentsOpen, setAreCommentsOpen] = useState(false)
+
+  const [hasCommentPosted, setHasCommentPosted] = useState(false)
+  const [commentCountIncrement, setCommentCountIncrement] = useState(0)
+
+  useEffect(()=> {
+    if(hasCommentPosted === true) {
+      setCommentCountIncrement((currentIncrement) => {
+        const newIncrement = currentIncrement + 1
+        return newIncrement
+      })
+      setHasCommentPosted(false)
+    }
+
+  }, [hasCommentPosted, setHasCommentPosted, setCommentCountIncrement])
+
 
   const shortArr = (reviewObject.review_body.slice(0, 100) + "...").split(' ')
   const longArr = reviewObject.review_body.split(' ')
@@ -147,7 +162,7 @@ const Review = ({ reviewObject }) => {
 
 
 
-            <div className="review-button-container" onClick={toggleCommentsOpen}><button>{reviewObject.comment_count} comments</button></div>
+            <div className="review-button-container" onClick={toggleCommentsOpen}><button>{parseInt(reviewObject.comment_count) + commentCountIncrement} comments</button></div>
 
             <Link to={`/reviews/${reviewObject.review_id}`} className="review-button-container" >
               <button>View review page</button></Link>
@@ -159,7 +174,7 @@ const Review = ({ reviewObject }) => {
 
       {areCommentsOpen &&
 
-        <Comments review_id={reviewObject.review_id} />
+        <Comments review_id={reviewObject.review_id} hasCommentPosted={hasCommentPosted} setHasCommentPosted={setHasCommentPosted}/>
 
 
 

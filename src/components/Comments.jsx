@@ -4,21 +4,15 @@ import { getCommentsByReview } from "../api"
 
 
 
-const Comments = ({review_id}) => {
+const Comments = ({review_id, hasCommentPosted, setHasCommentPosted}) => {
 
     const [ commentsData, setCommentsData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
-    const [commentPosted, setCommentPosted] = useState(false)
+    
 
-    console.log("rendering")
 
-    useEffect(()=> {
-      if(commentPosted === true) {
-        setCommentPosted(false)
-      }
 
-    }, [commentPosted, setCommentPosted])
 
 
     useEffect(() => {
@@ -30,7 +24,7 @@ const Comments = ({review_id}) => {
       }).catch((error) =>
       console.log(error));
  
-    }, [review_id, commentPosted]);
+    }, [review_id, hasCommentPosted]);
 
     
 
@@ -41,7 +35,7 @@ const Comments = ({review_id}) => {
 
         {!isLoading &&
         <section className='comments-container'>
-            <PostComment review_id={review_id} commentPosted={commentPosted} setCommentPosted={setCommentPosted}/>
+            <PostComment review_id={review_id} hasCommentPosted={hasCommentPosted} setHasCommentPosted={setHasCommentPosted}/>
 
             
             {

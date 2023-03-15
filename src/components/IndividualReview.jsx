@@ -11,6 +11,20 @@ const IndividualReview = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [reviewObject, setReviewObject] = useState({})
 
+  const [hasCommentPosted, setHasCommentPosted] = useState(false)
+  const [commentCountIncrement, setCommentCountIncrement] = useState(0)
+
+  useEffect(()=> {
+    if(hasCommentPosted === true) {
+      setCommentCountIncrement((currentIncrement) => {
+        const newIncrement = currentIncrement + 1
+        return newIncrement
+      })
+      setHasCommentPosted(false)
+    }
+
+  }, [hasCommentPosted, setHasCommentPosted, setCommentCountIncrement])
+
 
 
   useEffect(() => {
@@ -93,7 +107,7 @@ const IndividualReview = () => {
 
 
 
-            <p>{reviewObject.comment_count} comments</p>
+            <p>{parseInt(reviewObject.comment_count) + commentCountIncrement} comments</p>
 
 
 
@@ -110,7 +124,7 @@ const IndividualReview = () => {
 
 
 
-          <Comments review_id={review_id} />
+          <Comments review_id={review_id} hasCommentPosted={hasCommentPosted} setHasCommentPosted={setHasCommentPosted}/>
 
 
 
