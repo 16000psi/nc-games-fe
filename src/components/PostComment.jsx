@@ -4,14 +4,16 @@ import { UserContext } from '../context/UserContext';
 
 
 
-const PostComment = ({review_id}) => {
+const PostComment = ({review_id, commentPosted, setCommentPosted}) => {
 
     const { user } = useContext(UserContext);
 
     const [commentContent, setCommentContent] = useState("")
     const [errorCommentEmpty, setErrorCommentEmpty] = useState(false)
-    const [commentPosted, setCommentPosted] = useState(false)
+   
     const [commentError, setCommentError] = useState(false)
+    const [optimisticPost, setOptimisticPost] = useState(false)
+
 
     function onSubmit (event) {
         event.stopPropagation()
@@ -34,11 +36,17 @@ const PostComment = ({review_id}) => {
     } 
 
     function commentAddingAndConsequences () {
-        setCommentPosted(true)
+
+        setOptimisticPost(true)
+        
         addComment(review_id, {username: user.username, body: commentContent})
+        .then(() => {
+            setCommentPosted(true)
+            setOptimisticPost(false)
+        })
         .catch(() => {
             setCommentError(true)
-            setCommentPosted(false)
+
 
         })
 
@@ -47,7 +55,7 @@ const PostComment = ({review_id}) => {
     return (
         <section className='post-comment-form-container'>
 
-            {(user && !commentPosted && !commentError) ? 
+            {(user && !optimisticPost && !commentError) ? 
 
 
             <form className="post-comment-form">
@@ -73,7 +81,7 @@ const PostComment = ({review_id}) => {
                     <button onClick={onSubmit} type="submit">Post comment</button>
                 </div>
             </form>
-            : (user && commentPosted && !commentError) ?
+            : (user && optimisticPost && !commentError) ?
             <h2>Your comment has been posted</h2>
 
             : (commentError) ? 

@@ -10,13 +10,7 @@ const IndividualReview = () => {
 
   const [isLoading, setIsLoading] = useState(false)
   const [reviewObject, setReviewObject] = useState({})
-  const [idLoaded, setIdLoaded] = useState(false)
 
-  useEffect(() => {
-    if (review_id !== undefined) {
-      setIdLoaded(true)
-    }
-  }, [review_id])
 
 
   useEffect(() => {
@@ -113,12 +107,10 @@ const IndividualReview = () => {
 
         </div>
 
-        {idLoaded &&
 
 
-          <Comments review_id={reviewObject.review_id} />
 
-        }
+          <Comments review_id={review_id} />
 
 
 
