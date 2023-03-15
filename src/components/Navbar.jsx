@@ -129,7 +129,7 @@ export const Navbar = () => {
             <Link to={newEndpoint} className="submit-button" >
                 <div className="nav-button-flex-container">
                     <button onClick={submit} className="navbar-label">
-                    Search for all reviews
+                    Search for all {newEndpoint.replace("/", "")}
                     </button>
                     <img className="nav-submit-icon" src={arrowRightSVG} alt="submit" />
                 </div>
