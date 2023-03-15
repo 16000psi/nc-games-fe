@@ -19,8 +19,8 @@ const Reviews = () => {
     setIsLoading(true)
     getAllReviews(category_slug).then(({data}) => {
       const {reviews} = data
-      setIsLoading(false)
       setReviewsData(reviews);
+      setIsLoading(false)
     }).catch((error) =>
     console.log(error));
   }, []);

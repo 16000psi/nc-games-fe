@@ -83,6 +83,10 @@ export const secondsToTimeString = (seconds, result = {years: 0, days: 0, hours:
       }
 
       textDisplay += " ago."
+
+      if (textDisplay === " ago.") {
+        return "Just now."
+      }
   
       return textDisplay
     }
