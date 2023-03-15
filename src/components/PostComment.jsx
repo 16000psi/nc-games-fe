@@ -51,7 +51,12 @@ const PostComment = ({review_id}) => {
 
 
             <form className="post-comment-form">
-                <label className="add-comment-label" htmlFor="comment-input">
+                <label 
+                className="add-comment-label" 
+                htmlFor="comment-input"
+                style={(!errorCommentEmpty) ? {color: "inherit"} : {color: "red"}}
+
+                >
                     {(!errorCommentEmpty) ? "Add a comment on this review" : "Comment cannot be empty!"}</label>
                 <textarea 
 

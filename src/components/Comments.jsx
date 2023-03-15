@@ -11,8 +11,6 @@ const Comments = ({review_id}) => {
 
 
     useEffect(() => {
-
-      // if (review_id !== undefined) {   /// why does this stop loads of bad requests??
       setIsLoading(true)
       getCommentsByReview(review_id).then(({data}) => {
         const {comments} = data
@@ -20,7 +18,7 @@ const Comments = ({review_id}) => {
         setIsLoading(false)
       }).catch((error) =>
       console.log(error));
-      // }
+ 
     }, [review_id]);
 
     
