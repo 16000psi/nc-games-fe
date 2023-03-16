@@ -1,5 +1,5 @@
 
-import { Header, Navbar, Footer, Home, Reviews, IndividualReview, Users, Categories} from './components/index';
+import { Header, Navbar, Footer, Home, Reviews, IndividualReview, Users, Categories, ErrorPage} from './components/index';
 
 import {Route, Routes} from "react-router-dom"
 

@@ -1,7 +1,7 @@
 import {Review} from "./index"
 import { useEffect, useState } from "react";
 import { getAllReviews } from "../api";
-import { useParams, useSearchParams} from "react-router-dom"
+import { useParams, useSearchParams, useNavigate} from "react-router-dom"
 
 
 import './../styles/Reviews.css';
@@ -10,6 +10,8 @@ import './../styles/Reviews.css';
 
   
 const Reviews = () => {
+
+  const navigate = useNavigate()
 
   const [reviewsData, setReviewsData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -25,8 +27,10 @@ const Reviews = () => {
       const {reviews} = data
       setReviewsData(reviews);
       setIsLoading(false)
-    }).catch((error) =>
-    console.log(error));
+    }).catch((error) => {
+    console.log(error)
+    navigate("/error")
+  });
   }, [sort_by, category_slug, order]);
    
 
