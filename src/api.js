@@ -10,10 +10,13 @@ export const getCommentsByReview = (review_id) => {
 
 }
 
-export const getAllReviews = (category_slug) => {
+export const getAllReviews = (category_slug,sort_by, order) => {
     return api.get("/reviews", {
         params: {
-            category: category_slug
+            category: category_slug,
+            sort_by,
+            order
+            
         }
     })
 
@@ -26,11 +29,7 @@ export const incrementVotes = (parent_id, increment) => {
     return api.patch(`/reviews/${parent_id}`, {
         inc_votes: increment,
 
-})
-
-
     })
-
 }
 
 

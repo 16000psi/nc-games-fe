@@ -14,6 +14,7 @@ const IndividualReview = () => {
   const [hasCommentPosted, setHasCommentPosted] = useState(false)
   const [commentCountIncrement, setCommentCountIncrement] = useState(0)
 
+
   useEffect(()=> {
     if(hasCommentPosted === true) {
       setCommentCountIncrement((currentIncrement) => {
