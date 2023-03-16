@@ -23,6 +23,8 @@ function App() {
               <Route path="/reviews/category/:category_slug" element={<Reviews />}/>
               <Route path="/categories" element={<Categories />}/>
               <Route path="/users" element={<Users />} />
+              <Route path="*" element={<ErrorPage />} />
+              <Route path="/error" element={<ErrorPage />} />
             </Routes>
           </section>
         </section>
