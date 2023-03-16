@@ -29,7 +29,7 @@ const Reviews = () => {
       setIsLoading(false)
     }).catch((error) => {
     console.log(error)
-    navigate("/error")
+    navigate("/404")
   });
   }, [sort_by, category_slug, order]);
    

@@ -47,7 +47,7 @@ const IndividualReview = () => {
       setReviewObject(review);
       setIsLoading(false)
     }).catch((error) => {
-      navigate("/error")
+      navigate("/404")
       console.log(error)});
   }, [review_id, navigate]);
 
