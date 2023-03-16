@@ -29,7 +29,9 @@ export const incrementVotes = (parent_id, increment) => {
     return api.patch(`/reviews/${parent_id}`, {
         inc_votes: increment,
 
+
     })
+
 }
 
 
@@ -53,3 +55,6 @@ export const addComment = (review_id, newComment) => {
     return api.post(`/reviews/${review_id}/comments`, newComment)
 };
 
+export const deleteComment = (comment_id) => {
+    return api.delete(`/comments/${comment_id}`)
+}

@@ -13,18 +13,19 @@ const Review = ({ reviewObject }) => {
   const [areCommentsOpen, setAreCommentsOpen] = useState(false)
 
   const [hasCommentPosted, setHasCommentPosted] = useState(false)
+  const [hasCommentDeleted, setHasCommentDeleted] = useState(false)
   const [commentCountIncrement, setCommentCountIncrement] = useState(0)
 
-  useEffect(()=> {
-    if(hasCommentPosted === true) {
+  useEffect(() => {
+    if (hasCommentPosted === true || hasCommentDeleted === true) {
       setCommentCountIncrement((currentIncrement) => {
-        const newIncrement = currentIncrement + 1
+        const newIncrement = (hasCommentPosted) ? currentIncrement + 1 : currentIncrement - 1
         return newIncrement
       })
       setHasCommentPosted(false)
     }
 
-  }, [hasCommentPosted, setHasCommentPosted, setCommentCountIncrement])
+  }, [hasCommentPosted, setHasCommentPosted, hasCommentDeleted, setHasCommentDeleted, setCommentCountIncrement])
 
 
   const shortArr = (reviewObject.review_body.slice(0, 100) + "...").split(' ')
@@ -158,10 +159,6 @@ const Review = ({ reviewObject }) => {
               <Votes id={reviewObject.review_id} votes={reviewObject.votes} parentType={"review"} />
             </div>
 
-
-
-
-
             <div className="review-button-container" onClick={toggleCommentsOpen}><button>{parseInt(reviewObject.comment_count) + commentCountIncrement} comments</button></div>
 
             <Link to={`/reviews/${reviewObject.review_id}`} className="review-button-container" >
@@ -174,12 +171,8 @@ const Review = ({ reviewObject }) => {
 
       {areCommentsOpen &&
 
-        <Comments review_id={reviewObject.review_id} hasCommentPosted={hasCommentPosted} setHasCommentPosted={setHasCommentPosted}/>
-
-
-
+        <Comments review_id={reviewObject.review_id} hasCommentPosted={hasCommentPosted} setHasCommentPosted={setHasCommentPosted} hasCommentDeleted={hasCommentDeleted} setHasCommentDeleted={setHasCommentDeleted} />
       }
-
 
       <div className="expand-indicator-container">
 

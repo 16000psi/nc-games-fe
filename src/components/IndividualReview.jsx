@@ -14,22 +14,22 @@ const IndividualReview = () => {
   const [reviewObject, setReviewObject] = useState({})
 
   const [hasCommentPosted, setHasCommentPosted] = useState(false)
+  const [hasCommentDeleted, setHasCommentDeleted] = useState(false)
   const [commentCountIncrement, setCommentCountIncrement] = useState(0)
 
 
   useEffect(()=> {
-    if(hasCommentPosted === true) {
+    if(hasCommentPosted === true || hasCommentDeleted === true) {
 
-      
 
       setCommentCountIncrement((currentIncrement) => {
-        const newIncrement = currentIncrement + 1
+        const newIncrement = (hasCommentPosted) ? currentIncrement + 1 : currentIncrement - 1
         return newIncrement
       })
       setHasCommentPosted(false)
     }
 
-  }, [hasCommentPosted, setHasCommentPosted, setCommentCountIncrement])
+  }, [hasCommentPosted, setHasCommentPosted, hasCommentDeleted, setHasCommentDeleted, setCommentCountIncrement])
 
 
 
@@ -74,9 +74,6 @@ const IndividualReview = () => {
 
           </div>
 
-
-
-
         </div>
 
 
@@ -103,10 +100,6 @@ const IndividualReview = () => {
             <img className="review-image" src={reviewObject.review_img_url} alt="boardgame" />
           </div>
 
-
-
-
-
           <div className="likes-comments-buttons-container">
 
             <div className="review-button-container" onClick={(event) => {
@@ -115,31 +108,11 @@ const IndividualReview = () => {
               <Votes id={reviewObject.review_id} votes={reviewObject.votes} parentType={"review"} />
             </div>
 
-
-
-
-
             <p>{parseInt(reviewObject.comment_count) + commentCountIncrement} comments</p>
 
-
-
-
-
           </div>
-
-
-
-
-
         </div>
-
-
-
-
-          <Comments review_id={review_id} hasCommentPosted={hasCommentPosted} setHasCommentPosted={setHasCommentPosted}/>
-
-
-
+          <Comments review_id={review_id} hasCommentPosted={hasCommentPosted} setHasCommentPosted={setHasCommentPosted} hasCommentDeleted={hasCommentDeleted} setHasCommentDeleted={setHasCommentDeleted}/>
 
       </div>
 

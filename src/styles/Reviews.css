@@ -182,6 +182,7 @@
 .review-votes{
     display: flex;
     justify-content: left;
+    margin-bottom: 20px;
 
 }
 
@@ -300,6 +301,27 @@
     padding: 0;
 }
 
+.votes-button{
+    padding-bottom: 100px;
+    background-color: red;
+}
 
+.comments-delete-prompt-container > * {
+    padding-right: 20px;
+}
 
-    
+.comment-delete-options{
+    margin-bottom: 30px;
+    margin-left: 2%;
+}
+
+.comment-deleted-container{
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.comment-deleted-container button{
+    font-size: 1.5rem;
+    border: 1px solid white;
+    padding: 5px;
+}
