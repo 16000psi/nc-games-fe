@@ -315,4 +315,13 @@
     margin-left: 2%;
 }
 
-    
+.comment-deleted-container{
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.comment-deleted-container button{
+    font-size: 1.5rem;
+    border: 1px solid white;
+    padding: 5px;
+}
