@@ -4,7 +4,7 @@ import { getCommentsByReview } from "../api"
 
 
 
-const Comments = ({review_id, hasCommentPosted, setHasCommentPosted}) => {
+const Comments = ({review_id, hasCommentPosted, setHasCommentPosted, hasCommentDeleted, setHasCommentDeleted}) => {
 
     const [ commentsData, setCommentsData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -41,7 +41,7 @@ const Comments = ({review_id, hasCommentPosted, setHasCommentPosted}) => {
             {
                 (commentsData.length > 1) ? 
                 commentsData.map((comment) => {
-                    return <Comment key={comment.comment_id} commentObject={comment}  />
+                    return <Comment key={comment.comment_id} commentObject={comment} hasCommentDeleted={hasCommentDeleted} setHasCommentDeleted={setHasCommentDeleted} />
                 })
                 :
                 <h2>There are no comments for this post yet.</h2>

@@ -1,19 +1,88 @@
 import { Votes } from "."
 import { howLongAgo} from "../Utils/how-long-ago"
+import { UserContext } from '../context/UserContext';
+import { useContext, useState} from 'react';
+import { deleteComment } from "../api";
 
 
 
-const Comment = ({commentObject}) => {
+const Comment = ({commentObject, hasCommentDeleted, setHasCommentDeleted}) => {
 
-    return (
+    const { user } = useContext(UserContext);
+    const [deleteOpened, setDeleteOpened] = useState(false)
+    const [optimisticDeleted, setOptimisticDeleted] = useState(false)
+    const [notDeletedError, setNotDeletedError] = useState(false)
+
+    function deleteClick (event) {
+        event.stopPropagation()
+        setDeleteOpened(true)
+    }
+
+    function cancelDeletion (event) {
+        event.stopPropagation()
+        setDeleteOpened(false)
+
+    }
+
+    function executeDeletion(event) {
+        event.stopPropagation()
+        setOptimisticDeleted(true)
+
+
+
+        deleteComment(commentObject.comment_id).then(() => {
+            setHasCommentDeleted(true)
+        }).catch(() => {
+            setHasCommentDeleted(false)
+            setOptimisticDeleted(false)
+            setNotDeletedError(true)
+        })
+
+
+    }
+
+
+    return ( <>
+        {!optimisticDeleted &&
         <section className='comment'>
+
             <h2 className="comment-author">{commentObject.author}</h2>
             <p className="comment-time">{howLongAgo(commentObject.created_at)}</p>
             <p className="comment-body">{commentObject.body}</p>
-            <Votes id={commentObject.comment_id} votes={commentObject.votes} parentType={"comment"} />
+            <div className="votes-delete">
+            {(user.username !== commentObject.author) ?
+                <Votes id={commentObject.comment_id} votes={commentObject.votes} parentType={"comment"} />
+                :
+                (user.username === commentObject.author && !deleteOpened) ?
+                <>
+                <p>{commentObject.votes} votes</p>
+                <button onClick={deleteClick} className="comment-delete-options">DELETE</button> 
+                </>
+                : (user.username === commentObject.author && deleteOpened) ?
+                <>
+                <p>{commentObject.votes} votes</p>
+                <div className="comments-delete-prompt-container comment-delete-options">
+                    <button onClick={executeDeletion}>Delete my comment</button> 
+                    <button onClick={cancelDeletion}>No, keep my comment</button>
+                </div> 
+                </>
+                :
+                <></>
+                }
+            </div>
 
 
         </section>
+
+        }
+        {optimisticDeleted &&
+        <h2>Comment deleted</h2>
+        }
+        {notDeletedError &&
+        <h2>Error deleting comment</h2>
+        }
+
+        </>
     )
 }
 

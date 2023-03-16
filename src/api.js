@@ -28,9 +28,6 @@ export const incrementVotes = (parent_id, increment) => {
 
 })
 
-
-    })
-
 }
 
 
@@ -54,3 +51,6 @@ export const addComment = (review_id, newComment) => {
     return api.post(`/reviews/${review_id}/comments`, newComment)
 };
 
+export const deleteComment = (comment_id) => {
+    return api.delete(`/comments/${comment_id}`)
+}
