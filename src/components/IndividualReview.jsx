@@ -2,9 +2,11 @@ import { howLongAgo } from "./../Utils/how-long-ago"
 import { Votes, Comments } from "./index"
 import { useState, useEffect } from "react"
 import { getSingleReview } from "../api"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 const IndividualReview = () => {
+
+  const navigate = useNavigate()
 
   const { review_id } = useParams()
 
@@ -15,8 +17,11 @@ const IndividualReview = () => {
   const [hasCommentDeleted, setHasCommentDeleted] = useState(false)
   const [commentCountIncrement, setCommentCountIncrement] = useState(0)
 
+
   useEffect(()=> {
     if(hasCommentPosted === true || hasCommentDeleted === true) {
+
+
       setCommentCountIncrement((currentIncrement) => {
         const newIncrement = (hasCommentPosted) ? currentIncrement + 1 : currentIncrement - 1
         return newIncrement
@@ -29,6 +34,11 @@ const IndividualReview = () => {
 
 
   useEffect(() => {
+
+    if(/\D/.test(review_id)) {
+      navigate("/error")
+      return
+    }
     setIsLoading(true)
 
     getSingleReview(review_id).then(({ data }) => {
@@ -36,9 +46,10 @@ const IndividualReview = () => {
       const { review } = data
       setReviewObject(review);
       setIsLoading(false)
-    }).catch((error) =>
-      console.log(error));
-  }, [review_id]);
+    }).catch((error) => {
+      navigate("/404")
+      console.log(error)});
+  }, [review_id, navigate]);
 
   return (<>
 

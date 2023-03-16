@@ -11,6 +11,8 @@ import Comment from "./Comment"
 import IndividualReview from './IndividualReview';
 import Categories from './Categories';
 import Users from './Users';
+import ErrorPage from './error-handling/ErrorPage';
+import FourOhFour from './error-handling/FourOhFour';
 
-export {Header, Navbar, Footer, Home, Reviews, Review, Votes, Comments, PostComment, Comment, IndividualReview, Categories, Users}
+export {Header, Navbar, Footer, Home, Reviews, Review, Votes, Comments, PostComment, Comment, IndividualReview, Categories, Users, ErrorPage, FourOhFour}
 

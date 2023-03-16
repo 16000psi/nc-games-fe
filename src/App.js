@@ -1,5 +1,5 @@
 
-import { Header, Navbar, Footer, Home, Reviews, IndividualReview, Users, Categories} from './components/index';
+import { Header, Navbar, Footer, Home, Reviews, IndividualReview, Users, Categories, ErrorPage, FourOhFour} from './components/index';
 
 import {Route, Routes} from "react-router-dom"
 
@@ -23,6 +23,9 @@ function App() {
               <Route path="/reviews/category/:category_slug" element={<Reviews />}/>
               <Route path="/categories" element={<Categories />}/>
               <Route path="/users" element={<Users />} />
+              <Route path="/error" element={<ErrorPage />} />
+              <Route path="*" element={<FourOhFour />} />
+              <Route path="/404" element={<FourOhFour />} />
             </Routes>
           </section>
         </section>
