@@ -92,6 +92,21 @@
 
 }
 
+.avatar-icon-container {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin: 0;
+}
+
+.avatar-icon {
+    border: solid 2px white;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%
+}
+
 .navbar-label{
     font-size: 1.5rem;
     line-height: 30px; 
