@@ -8,7 +8,7 @@ There is a menu bar at the top which you can use to navigate through the website
 
 The backend is hosted here: https://nc-games-dave.onrender.com/api and its repo is here: https://github.com/16000psi/Boardgame_API
 
-This frontend was written in JS Node, version 19.1. 
+This frontend was written in React 18.2 with JS Node, version 19.1. 
 
 In order to run this frontend on your own machine, clone this repo and then run npm install in the root directory.  Run npm start to see the app working.
 
