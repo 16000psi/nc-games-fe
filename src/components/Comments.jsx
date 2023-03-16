@@ -38,7 +38,7 @@ const Comments = ({review_id, hasCommentPosted, setHasCommentPosted, hasCommentD
 
             
             {
-                (commentsData.length > 1) ? 
+                (commentsData.length > 0) ? 
                 commentsData.map((comment) => {
                     return <Comment key={comment.comment_id} commentObject={comment} hasCommentDeleted={hasCommentDeleted} setHasCommentDeleted={setHasCommentDeleted} />
                 })

@@ -1,12 +1,17 @@
 import { useState } from "react"
 import { incrementVotes } from "../api"
 
-const Votes = ({id, votes}) => {
+const Votes = ({id, votes, setVotesIncrement}) => {
 
     const [votesNumber, setVotesNumber] = useState(votes)
     const [voteError, setVoteError] = useState(false)
 
     function activateUpVote (event) {
+
+        setVotesIncrement((currentVotesIncrement) => {
+            const newVotesIncrement = currentVotesIncrement + 1
+            return newVotesIncrement
+        })
 
         setVotesNumber((currentVotesNumber) => {
             const newVotes = currentVotesNumber + 1
@@ -29,6 +34,11 @@ const Votes = ({id, votes}) => {
     }
 
     function activateDownVote (event) {
+
+        setVotesIncrement((currentVotesIncrement) => {
+            const newVotesIncrement = currentVotesIncrement - 1
+            return newVotesIncrement
+        })
 
         setVotesNumber((currentVotesNumber) => {
             const newVotes = currentVotesNumber - 1

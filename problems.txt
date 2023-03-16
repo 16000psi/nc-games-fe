@@ -1,4 +1,14 @@
-When expanding / collapsing review cards, temporary vote increment is reset - maybe need to pass vote up to review? Take a look at this
 
+Rearrange Menus
 
-Reviews with one comment dont display the comment in both views view until another one is posted.
+Add category
+
+Add review 
+
+Delete review
+
+Fetch all comments
+
+Add users
+
+Add comment voting

@@ -15,6 +15,7 @@ const Review = ({ reviewObject }) => {
   const [hasCommentPosted, setHasCommentPosted] = useState(false)
   const [hasCommentDeleted, setHasCommentDeleted] = useState(false)
   const [commentCountIncrement, setCommentCountIncrement] = useState(0)
+  const [votesIncrement, setVotesIncrement] = useState(0)
 
   useEffect(() => {
     if (hasCommentPosted === true || hasCommentDeleted === true) {
@@ -156,7 +157,7 @@ const Review = ({ reviewObject }) => {
             <div className="review-button-container" onClick={(event) => {
               event.stopPropagation()
             }}>
-              <Votes id={reviewObject.review_id} votes={reviewObject.votes} parentType={"review"} />
+              <Votes id={reviewObject.review_id} votes={reviewObject.votes + votesIncrement} parentType={"review"} setVotesIncrement={setVotesIncrement}/>
             </div>
 
             <div className="review-button-container" onClick={toggleCommentsOpen}><button>{parseInt(reviewObject.comment_count) + commentCountIncrement} comments</button></div>

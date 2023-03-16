@@ -16,6 +16,7 @@ const IndividualReview = () => {
   const [hasCommentPosted, setHasCommentPosted] = useState(false)
   const [hasCommentDeleted, setHasCommentDeleted] = useState(false)
   const [commentCountIncrement, setCommentCountIncrement] = useState(0)
+  const [votesIncrement, setVotesIncrement] = useState(0)
 
 
   useEffect(()=> {
@@ -105,7 +106,7 @@ const IndividualReview = () => {
             <div className="review-button-container" onClick={(event) => {
               event.stopPropagation()
             }}>
-              <Votes id={reviewObject.review_id} votes={reviewObject.votes} parentType={"review"} />
+              <Votes id={reviewObject.review_id} votes={reviewObject.votes} parentType={"review"} setVotesIncrement={setVotesIncrement} />
             </div>
 
             <p>{parseInt(reviewObject.comment_count) + commentCountIncrement} comments</p>
