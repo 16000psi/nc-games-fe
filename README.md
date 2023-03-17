@@ -12,4 +12,4 @@ This frontend was written in React 18.2 with JS Node, version 19.1.
 
 In order to run this frontend on your own machine, clone this repo and then run npm install in the root directory.  Run npm start to see the app working.
 
-It uses the packages: React-router-dom, framer-motion, axios, react-DOM.
+It uses the packages: React-router-dom, framer-motion, axios, react-DOM. //
