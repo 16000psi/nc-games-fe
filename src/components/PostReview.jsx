@@ -10,7 +10,7 @@ function PostReview() {
 
     const navigate = useNavigate()
 
-    const { user, setUser } = useContext(UserContext);
+    const { user} = useContext(UserContext);
 
     const [categoriesData, setCategoriesData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -128,10 +128,10 @@ function PostReview() {
     return (
         <div className="post-review-form-container">
 
-            {isLoading &&
-                <h2>Loading</h2>
+            {(isLoading && user) &&
+                <h2 className="post-message">Loading</h2>
             }
-            {!isLoading &&
+            {(!isLoading && user) &&
                 <form className="post-review-form">
                     <label htmlFor="review-title-input"
                         style={(titleEmpty) ? { color: "red" } : { color: "inherit" }}
@@ -203,6 +203,9 @@ function PostReview() {
                         </button>
                     </div>
                 </form>
+            }
+            {(!user) &&
+                <h2 className="post-message">You must be logged in to post a review.</h2>
             }
         </div>
     )

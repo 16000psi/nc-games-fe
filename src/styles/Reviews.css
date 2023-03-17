@@ -325,3 +325,8 @@
     border: 1px solid white;
     padding: 5px;
 }
+
+.post-message{
+    font-size: 2rem;
+    color: white;
+}
