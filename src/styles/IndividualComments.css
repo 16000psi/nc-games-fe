@@ -1,0 +1,47 @@
+.individual-comment{
+    position: relative;
+    z-index: 5;
+    background-image: linear-gradient(to left, rgb(9, 16, 29), rgb(18, 28, 47));
+    color: rgb(211, 211, 211);
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    box-shadow: inset 0 0 30px rgba(51, 60, 51, 0.813);
+    border: 1px solid rgba(255, 255, 255, 0.508);
+
+    border-radius: 20px;
+}
+
+
+.individual-comment > *{
+    position: relative;
+    left: 10%;
+    width: 80%;
+
+}
+.individual-comment-author{
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+}
+
+.individual-comment-where{
+    padding-bottom: 20px;
+}
+
+.individual-comment-votes{
+    padding-bottom: -20px;
+    margin-bottom: -20px;
+
+}
+
+
+
+.individual-comment-body {
+    font-size: 1.7rem;
+    padding-bottom: 20px;
+}
+
+
+
+
