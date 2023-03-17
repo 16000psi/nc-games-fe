@@ -31,7 +31,7 @@ const Reviews = () => {
     console.log(error)
     navigate("/404")
   });
-  }, [sort_by, category_slug, order]);
+  }, [sort_by, category_slug, order, navigate]);
    
 
 

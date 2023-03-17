@@ -106,7 +106,7 @@ const IndividualReview = () => {
             <div className="review-button-container" onClick={(event) => {
               event.stopPropagation()
             }}>
-              <Votes id={reviewObject.review_id} votes={reviewObject.votes} parentType={"review"} setVotesIncrement={setVotesIncrement} />
+              <Votes id={reviewObject.review_id} votes={reviewObject.votes} parentType={"review"} votesIncrement={votesIncrement} setVotesIncrement={setVotesIncrement} />
             </div>
 
             <p>{parseInt(reviewObject.comment_count) + commentCountIncrement} comments</p>
