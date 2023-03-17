@@ -7,3 +7,6 @@ Add users
 Add comment voting
 
 add user profile
+
+
+sort formatting for votes

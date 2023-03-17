@@ -10,6 +10,10 @@ export const getCommentsByReview = (review_id) => {
 
 }
 
+export const getComments = () => {
+    return api.get("/comments")
+}
+
 export const getAllReviews = (category_slug,sort_by, order) => {
     return api.get("/reviews", {
         params: {
