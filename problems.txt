@@ -1,10 +1,6 @@
-Add category
-
-Add review 
+Fetch all comments
 
 Delete review
-
-Fetch all comments
 
 Add users
 

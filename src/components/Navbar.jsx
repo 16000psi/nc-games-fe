@@ -63,7 +63,7 @@ export const Navbar = () => {
         setActiveSearchButton(null)
     }
 
-    function logout () {
+    function logout() {
         setUser(null)
 
     }
@@ -216,6 +216,16 @@ export const Navbar = () => {
                             {(activeSearchButton === "reviews") &&
 
                                 <>
+
+                                    <Link to={"/post"} className="submit-button" >
+                                        <div className="nav-button-flex-container">
+                                            <button onClick={submit} className="navbar-label">
+                                                Post
+                                            </button>
+                                            <img className="nav-submit-icon" src={arrowRightSVG} alt="submit" />
+                                        </div>
+
+                                    </Link>
 
                                     <label htmlFor="sort-by" className="drop-down-menu-label">sort by</label>
                                     <select id="sort-by" value={sortBySelection} onChange={sortByChange} className="drop-down-menu">

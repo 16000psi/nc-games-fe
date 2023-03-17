@@ -58,3 +58,14 @@ export const addComment = (review_id, newComment) => {
 export const deleteComment = (comment_id) => {
     return api.delete(`/comments/${comment_id}`)
 }
+
+export const addReview = (owner, title, category, designer, review_img_url, review_body) => {
+    return api.post(`/reviews`, {
+        owner,
+        title,
+        category,
+        designer,
+        review_img_url,
+        review_body
+    })
+}

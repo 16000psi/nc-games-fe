@@ -13,6 +13,7 @@ import Categories from './Categories';
 import Users from './Users';
 import ErrorPage from './error-handling/ErrorPage';
 import FourOhFour from './error-handling/FourOhFour';
+import PostReview from './PostReview';
 
-export {Header, Navbar, Footer, Home, Reviews, Review, Votes, Comments, PostComment, Comment, IndividualReview, Categories, Users, ErrorPage, FourOhFour}
+export {Header, Navbar, Footer, Home, Reviews, Review, Votes, Comments, PostComment, Comment, IndividualReview, Categories, Users, ErrorPage, FourOhFour, PostReview}
 
