@@ -16,6 +16,7 @@ import FourOhFour from './error-handling/FourOhFour';
 import PostReview from './PostReview';
 import RecentComments from './RecentComments';
 import IndividualComment from './IndividualComment';
+import CreateAccount from "./CreateAccount"
 
-export {Header, Navbar, Footer, Home, Reviews, Review, Votes, Comments, PostComment, Comment, IndividualReview, Categories, Users, ErrorPage, FourOhFour, PostReview, RecentComments, IndividualComment}
+export {Header, Navbar, Footer, Home, Reviews, Review, Votes, Comments, PostComment, Comment, IndividualReview, Categories, Users, ErrorPage, FourOhFour, PostReview, RecentComments, IndividualComment, CreateAccount}
 
