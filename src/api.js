@@ -73,3 +73,11 @@ export const addReview = (owner, title, category, designer, review_img_url, revi
         review_body
     })
 }
+
+export const addUser = (username, name, avatar_url) => {
+    return api.post(`/users`, {
+        username,
+        name,
+        avatar_url
+    })
+}

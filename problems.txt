@@ -1,8 +1,8 @@
-Fetch all comments
+Add users
+
+add loading to get users
 
 Delete review
-
-Add users
 
 Add comment voting
 
@@ -10,3 +10,12 @@ add user profile
 
 
 sort formatting for votes
+
+add network connection error page for e.g if categories doesnt use / users doenst load on create account
+
+
+update api endpoints
+
+add pics to comment components
+
+loading animations
