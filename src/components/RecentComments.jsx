@@ -46,7 +46,9 @@ const RecentComments = () => {
         </section>
         }
         {isLoading &&
-        <h2>Loading</h2>
+               <div className="review-card loading-card">
+               <h2 className="loading-message">Loading...</h2>
+               </div>
         }
         </>)
 }

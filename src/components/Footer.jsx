@@ -1,16 +1,27 @@
 import './../styles/Header-Navbar-Footer.css';
 
-import pencilSVG from "./../images/pencil.svg"
-
 const Footer = () => {
     return (
         <div className='footer-new-widget'>
             <section className='footer'>
-                <h2>NC Footer</h2>
+                <div className='footer-text-container'>
+
+                    <div className='footer-subtitle-container footer-element'>
+                        <h2 className="footer-subtitle">A React App by Dave Smith</h2>
+                        <a className='footer-link' href='https://github.com/16000psi' target="_blank" rel="noreferrer">My Github</a>
+                        <a className='footer-link' href='https://github.com/16000psi/Boardgame_API' target="_blank" rel="noreferrer">BE Repo</a>
+                        <a className='footer-link' href='https://github.com/16000psi/nc-games-fe' target="_blank" rel="noreferrer">FE Repo</a>
+                    </div>
+                    <div className='footer-element'>
+                        <h2>2023</h2>
+                    </div>
+                </div>
+
+
+
+
             </section>
-            <button className='new-review-widget'>
-                <img className='new-review-widget-icon' src={pencilSVG} alt="create new review button"/>
-            </button>
+
         </div>
     )
 }

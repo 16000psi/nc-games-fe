@@ -330,3 +330,17 @@
     font-size: 2rem;
     color: white;
 }
+
+.loading-card{
+    background-image: none;
+    animation: loading-card-loading 1s linear infinite alternate;
+}
+
+@keyframes loading-card-loading {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.144);
+    }
+}

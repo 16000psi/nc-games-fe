@@ -38,7 +38,9 @@ const Reviews = () => {
     return (<div className="reviews">
       
         {(isLoading) ? 
-        <h2 className="loading-message">loading</h2>
+        <div className="review-card loading-card">
+        <h2 className="loading-message">Loading...</h2>
+        </div>
         :
             reviewsData.map((review) => {
                 return (
