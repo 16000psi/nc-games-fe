@@ -1,21 +1,26 @@
-Add users
 
-add loading to get users
+
+add user profile
+
+add browser remembers user
+
+sort icon n tab title
+
+sort formatting for votes
+
+update api endpoints
+
+make "you must be logged in to post review" look nicer
+
+responsive css
+
+
+stretch.... 
 
 Delete review
 
 Add comment voting
 
-add user profile
-
-
-sort formatting for votes
-
-add network connection error page for e.g if categories doesnt use / users doenst load on create account
-
-
-update api endpoints
-
 add pics to comment components
 
-loading animations
+add network connection error page for e.g if categories doesnt use / users doenst load on create account

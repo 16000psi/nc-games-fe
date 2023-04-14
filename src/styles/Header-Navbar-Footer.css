@@ -251,8 +251,31 @@ option{
     border-top: 3px solid rgb(238, 235, 235);
     position: absolute;
 
+
     width: 100%;
     bottom: 0px;
+}
+
+.footer-text-container{
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+
+}
+
+.footer-subtitle{
+    font-size: 1rem;
+}
+
+.footer-link{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.footer-element{
+    width: 33.3%
 }
 
 .logged-in-message{
