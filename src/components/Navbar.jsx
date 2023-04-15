@@ -348,7 +348,7 @@ export const Navbar = () => {
 
 
 
-                                            <Link to={"/profile"} className="submit-button" >
+                                            <Link to={`/profile`} className="submit-button" >
                                                 <div className="nav-button-flex-container">
                                                     <button onClick={submit} className="navbar-label">
                                                         View Profile

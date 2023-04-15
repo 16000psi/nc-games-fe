@@ -81,3 +81,9 @@ export const addUser = (username, name, avatar_url) => {
         avatar_url
     })
 }
+
+export const getReviewsByUser = (username) => {
+    return api.get(`/reviews/user/${username}`, {
+    })
+
+}

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { incrementVotes } from "../api"
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
@@ -10,6 +10,16 @@ const Votes = ({ id, votes, setVotesIncrement }) => {
     const { user } = useContext(UserContext);
     const [isUpVoted, setIsUpVoted] = useState(false)
     const [isDownVoted, setIsDownVoted] = useState(false)
+
+    useEffect(() => {
+        let upvoted = JSON.parse(localStorage.getItem(`${user.username}-${id}-upvotes`))
+        let downvoted = JSON.parse(localStorage.getItem(`${user.username}-${id}-downvotes`))
+        if (upvoted && upvoted === 1) {
+            setIsUpVoted(true)
+        } else if (downvoted && downvoted === 1) {
+            setIsDownVoted(true)
+        }
+    }, [id, user.username])
 
     function activateUpVote(event) {
 

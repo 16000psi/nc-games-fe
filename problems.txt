@@ -2,8 +2,6 @@
 
 add user profile
 
-add browser remembers user
-
 sort icon n tab title
 
 sort formatting for votes

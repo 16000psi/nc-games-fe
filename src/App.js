@@ -4,6 +4,7 @@ import { Header, Navbar, Footer, Home, Reviews, IndividualReview, Users, Categor
 import {Route, Routes} from "react-router-dom"
 
 import './styles/App.css';
+import Profile from './components/Profile';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/users" element={<Users />} />
               <Route path="/post" element={<PostReview />} />
               <Route path="/create-account" element={<CreateAccount />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/error" element={<ErrorPage />} />
               <Route path="*" element={<FourOhFour />} />
               <Route path="/404" element={<FourOhFour />} />
