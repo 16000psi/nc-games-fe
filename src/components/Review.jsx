@@ -106,11 +106,11 @@ const Review = ({ reviewObject }) => {
           <p>Designed by {reviewObject.designer}</p>
           <p>Category: {reviewObject.category}</p>
 
-          <div className="review-button-container" onClick={(event) => {
+      <p className="view-image-link" onClick={(event) => {
             setImageIsDisplayed(!imageIsDisplayed)
             event.stopPropagation()
-          }}><button>{(imageIsDisplayed) ? "View review body" : "View review image"}</button>
-          </div>
+          }}>{(imageIsDisplayed) ? "View review body" : "View review image"}</p>
+   
         </div>
 
       }

@@ -169,7 +169,9 @@ export const Navbar = () => {
                             <p className="navbar-label">
                                 Log in
                             </p>
-                            <img className="nav-icon" src={userSVG} alt="account" />
+                            <div className="avatar-icon-container non-logged-in-pic-container">
+                                <img className="nav-icon avatar-icon non-logged-in-pic" src={userSVG} alt="account" />
+                            </div>
                         </div>
                     </button>
 
@@ -182,7 +184,7 @@ export const Navbar = () => {
                         onClick={() => mainNavOnClick("account", "account")}
                         style={(activeSearchButton === "account") ? activeButton : inactiveButton}>
                         <div className="nav-button-flex-container">
-                            <p className="navbar-label">
+                            <p className="navbar-label username-label">
                                 {user.username}
                             </p>
                             <div className="avatar-icon-container">
