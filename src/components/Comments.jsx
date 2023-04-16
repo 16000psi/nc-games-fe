@@ -22,7 +22,7 @@ const Comments = ({review_id, hasCommentPosted, setHasCommentPosted, hasCommentD
       getCommentsByReview(review_id).then(({data}) => {
         const {comments} = data
         setCommentsData(comments);
-        setIsLoading(false)
+       setIsLoading(false)
       }).catch((error) => {
         navigate("/error")
       
@@ -48,7 +48,9 @@ const Comments = ({review_id, hasCommentPosted, setHasCommentPosted, hasCommentD
         </section>
         }
         {isLoading &&
-        <h2>Loading</h2>
+                <div className="loading-card">
+                <h2 className="loading-message">Loading...</h2>
+                </div>
         }
         </>)
 }

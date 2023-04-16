@@ -169,8 +169,8 @@ export const Navbar = () => {
                             <p className="navbar-label">
                                 Log in
                             </p>
-                            <div className="avatar-icon-container">
-                                <img className="nav-icon avatar-icon" src={userSVG} alt="account" />
+                            <div className="avatar-icon-container non-logged-in-pic-container">
+                                <img className="nav-icon avatar-icon non-logged-in-pic" src={userSVG} alt="account" />
                             </div>
                         </div>
                     </button>

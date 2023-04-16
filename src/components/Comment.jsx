@@ -59,7 +59,7 @@ const Comment = ({ commentObject, hasCommentDeleted, setHasCommentDeleted }) => 
                 <p className="comment-body">{commentObject.body}</p>
                 <div className="votes-delete">
                     {(user && user.username !== commentObject.author) ?
-                        <Votes id={commentObject.comment_id} votes={commentObject.votes} parentType={"comment"} />
+                        <></>
                         :
                         (user && user.username === commentObject.author && !deleteOpened) ?
                             <>

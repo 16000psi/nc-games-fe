@@ -19,8 +19,8 @@ const IndividualReview = () => {
   const [votesIncrement, setVotesIncrement] = useState(0)
 
 
-  useEffect(()=> {
-    if(hasCommentPosted === true || hasCommentDeleted === true) {
+  useEffect(() => {
+    if (hasCommentPosted === true || hasCommentDeleted === true) {
 
 
       setCommentCountIncrement((currentIncrement) => {
@@ -36,7 +36,7 @@ const IndividualReview = () => {
 
   useEffect(() => {
 
-    if(/\D/.test(review_id)) {
+    if (/\D/.test(review_id)) {
       navigate("/error")
       return
     }
@@ -49,14 +49,17 @@ const IndividualReview = () => {
       setIsLoading(false)
     }).catch((error) => {
       navigate("/404")
-      console.log(error)});
+      console.log(error)
+    });
   }, [review_id, navigate]);
 
   return (<>
 
     {isLoading &&
 
-      <h2> LOADING</h2>
+      <div className="review-card loading-card">
+        <h2 className="loading-message">Loading...</h2>
+      </div>
 
     }
 
@@ -74,6 +77,14 @@ const IndividualReview = () => {
             <h3 className="review-time review-header-item">{howLongAgo(reviewObject.created_at)}</h3>
 
           </div>
+
+          <div className="review-header-narrow">
+
+<h2 className="review-title review-header-item" layout="position" >{reviewObject.title}</h2>
+<h3 className="review-owner review-header-item">{reviewObject.owner}</h3>
+<h3 className="review-time review-header-item">{howLongAgo(reviewObject.created_at)}</h3>
+
+</div>
 
         </div>
 
@@ -113,7 +124,7 @@ const IndividualReview = () => {
 
           </div>
         </div>
-          <Comments review_id={review_id} hasCommentPosted={hasCommentPosted} setHasCommentPosted={setHasCommentPosted} hasCommentDeleted={hasCommentDeleted} setHasCommentDeleted={setHasCommentDeleted}/>
+        <Comments review_id={review_id} hasCommentPosted={hasCommentPosted} setHasCommentPosted={setHasCommentPosted} hasCommentDeleted={hasCommentDeleted} setHasCommentDeleted={setHasCommentDeleted} />
 
       </div>
 
