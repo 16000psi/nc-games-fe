@@ -1,4 +1,3 @@
-import { Votes } from "."
 import { howLongAgo } from "../Utils/how-long-ago"
 import { UserContext } from '../context/UserContext';
 import { useContext, useState } from 'react';
