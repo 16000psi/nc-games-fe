@@ -10,7 +10,7 @@ function PostReview() {
 
     const navigate = useNavigate()
 
-    const { user} = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     const [categoriesData, setCategoriesData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -129,7 +129,9 @@ function PostReview() {
         <div className="post-review-form-container">
 
             {(isLoading && user) &&
-                <h2 className="post-message">Loading</h2>
+                <div className="review-card loading-card">
+                    <h2 className="loading-message">Loading...</h2>
+                </div>
             }
             {(!isLoading && user) &&
                 <form className="post-review-form">
@@ -158,7 +160,7 @@ function PostReview() {
                         })}
 
                     </select>
-    
+
                     <label htmlFor="review-designer-input"
                         style={(designerEmpty) ? { color: "red" } : { color: "inherit" }}
                     >
