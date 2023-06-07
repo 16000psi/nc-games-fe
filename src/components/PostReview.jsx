@@ -152,13 +152,13 @@ function PostReview() {
                     </label>
 
                     <select id="select-category" value={categorySelection}
-                        onChange={(event) => { setCategorySelection(event.target.value) }} className="drop-down-menu post-review-category-drop">
+                        onChange={(event) => { setCategorySelection(event.target.value) }} className="post-review-category-drop">
                         {categoriesData.map((category) => {
                             return <option key={category.slug} value={category.slug}>{category.slug}</option>
                         })}
 
                     </select>
-
+    
                     <label htmlFor="review-designer-input"
                         style={(designerEmpty) ? { color: "red" } : { color: "inherit" }}
                     >

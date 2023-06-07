@@ -40,6 +40,10 @@
 
 .post-review-category-drop{
     font-size: 1.5rem;
+    background-color: transparent;
+    color: white;
+    border-radius: 50px;
+    height: 30px;
 }
 
 .review-submit-button{
